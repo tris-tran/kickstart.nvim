@@ -44,6 +44,15 @@ P.S. You can delete this when you're done too. It's your config now :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.opt.colorcolumn = '80'
+
+vim.o.tabstop = 4;
+vim.o.expandtab = true;
+vim.o.softtabstop = 4;
+vim.o.shiftwidth = 4;
+
+vim.o.textwidth = 80
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -563,12 +572,19 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  --
+  -- java_language_server = {},
+
+  zls = {},
+  gopls = {},
+  elp = {},
+  tsserver = {},
+  bashls = {},
+  groovyls = {},
+  clangd = {},
+  rust_analyzer = {},
 
   lua_ls = {
     Lua = {
