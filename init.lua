@@ -30,7 +30,7 @@ You should run that command and read that help section for more information.
 In addition, I have some `NOTE:` items throughout the file.
 These are for you, the reader to help understand what is happening. Feel free to delete
 them once you know what you're doing, but they should serve as a guide for when you
-are first encountering a few different constructs in your nvim config.
+are first encounterin
 
 I hope you enjoy your Neovim journey,
 - TJ
@@ -200,10 +200,11 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'maxmx03/solarized.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.o.background = 'light'
+      vim.cmd.colorscheme 'solarized'
     end,
   },
 
@@ -581,7 +582,9 @@ local servers = {
   gopls = {},
   elp = {},
   tsserver = {},
-  bashls = {},
+  bashls = {
+    filetypes = { "sh", "bash", "trsh" },
+  },
   groovyls = {},
   clangd = {},
   rust_analyzer = {},
